@@ -1,6 +1,6 @@
  ShinyHipster::Application.routes.draw do
 
-  root 'arguments#index'
+  root 'questions#index'
 
   resources :arguments
   resources :comments
