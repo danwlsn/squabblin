@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
 	def index
     questions = Question.all
-    @rand_id = questions.sample.id
+    @question = questions.sample
 	end
 
 	def create
@@ -9,7 +9,6 @@ class QuestionsController < ApplicationController
 
 	def show
     @question = Question.find_by id: params[:id]
-    puts @question
 	end
 
 	def destroy
