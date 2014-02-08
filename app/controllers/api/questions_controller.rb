@@ -3,26 +3,23 @@ class Api::QuestionsController < ApplicationController
 	respond_to :json
 
 	def index
-		@questions = Question.find(1)
-		@args = @questions.arguments
-		respond_with :questions => @questions, :args => @args
+		@questions = Question.all
+		respond_with :questions => @questions
 	end
 
 	def create
 	end
 
 	def show
-	end
-
-	def update
+		@question = Question.find(params[:id])
+		@args = @question.arguments
+		respond_with :question => @question, :arguments => @args
 	end
 
 	def random
-		@questions = Question.find(1)
+		@questions = Question.random
 		@args = @questions.arguments
-		respond_with :questions => @questions, :args => @args
+		respond_with :questions => @questions, :arguments => @args
 	end
 
-	def destroy
-	end
 end
