@@ -12,7 +12,17 @@ class QuestionsController < ApplicationController
     args_b_text = params[:question][:args_b]
     args_a = Argument.create(:text=>args_a_text)
     args_b = Argument.create(:text=>args_b_text)
-    Question.create(:title=>question, :args_a=>args_a.id, :args_b=>args_b.id)
+    slug = to_slug(question)
+    unique = false
+    while unique == false
+      if (Question.find_by slug: slug) == nil
+        unique = true
+      else
+        slug.concat(rand(10).to_s)
+      end
+    end
+    Question.create(:title=>question, :args_a=>args_a.id, :args_b=>args_b.id, :slug=>slug)
+    redirect_to "/questions/#{slug}", :status => :moved_permanently
 	end
 
   def new
