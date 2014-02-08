@@ -30,9 +30,39 @@ class QuestionsController < ApplicationController
   end
 
 	def show
-    @question = Question.find_by id: params[:id]
+    @question = Question.find_by slug: params[:id]
+    if @question != nil
+      @args_a = Argument.find(@question.args_a)
+      @args_b = Argument.find(@question.args_b)
+    else
+      raise ActionController::RoutingError.new('Not Found')
+    end
 	end
 
 	def destroy
 	end
+
+  private
+    def to_slug(name)
+      #strip the string
+      ret = name.strip
+
+      #blow away apostrophes
+      ret.gsub!(/['`]/, "")
+
+      # @ --> at, and & --> and
+      ret.gsub!(/\s*@\s*/, " at ")
+      ret.gsub!(/\s*&\s*/, " and ")
+
+      #replace all non alphanumeric, underscore or periods with underscore
+      ret.gsub!(/\s*[^A-Za-z0-9\.\-]\s*/, '_')
+
+      #convert double underscores to single
+      ret.gsub!(/_+/,"_")
+
+      #strip off leading/trailing underscore
+      ret.gsub!(/\A[_\.]+|[_\.]+\z/,"")
+
+      ret
+    end
 end
