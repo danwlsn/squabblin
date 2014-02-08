@@ -3,8 +3,9 @@ class Api::QuestionsController < ApplicationController
 	respond_to :json
 
 	def index
-		@test = "debug"
-		respond_with @test
+		@questions = Question.find(1)
+		@args = @questions.arguments
+		respond_with :questions => @questions, :args => @args
 	end
 
 	def create
