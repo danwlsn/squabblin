@@ -1,6 +1,7 @@
 class Api::QuestionsController < ApplicationController
 
 	respond_to :json
+
 	def index
 		@test = "debug"
 		respond_with @test
