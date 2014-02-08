@@ -1,12 +1,14 @@
 class CommentsController < ApplicationController
 
 	def create
-	end
-
-	def show
-	end
-
-	def update
+    arg_id = params[:comment][:args_id]
+    slug = Question.find_by args_a: arg_id
+    if slug == nil
+      slug = Question.find_by args_b: arg_id
+    end
+    comment_text = params[:comment][:comment]
+    Comment.create(:comment=>comment_text, :args_id=> Integer(arg_id))
+    redirect_to "/questions/#{slug}", :status => :moved_permanently
 	end
 
 	def destroy

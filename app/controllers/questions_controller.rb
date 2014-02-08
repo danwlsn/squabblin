@@ -4,6 +4,9 @@ class QuestionsController < ApplicationController
     @question = questions.sample
     @args_a = Argument.find(@question.args_a)
     @args_b = Argument.find(@question.args_b)
+    @comments_a = Comment.where(args_id: @args_a.id).all
+    @comments_b = Comment.where(args_id: @args_b.id).all
+    @comment = Comment.new
 	end
 
 	def create
@@ -34,6 +37,9 @@ class QuestionsController < ApplicationController
     if @question != nil
       @args_a = Argument.find(@question.args_a)
       @args_b = Argument.find(@question.args_b)
+      @comments_a = Comment.where(args_id: @args_a.id).all
+      @comments_b = Comment.where(args_id: @args_b.id).all
+      @comment = Comment.new
     else
       raise ActionController::RoutingError.new('Not Found')
     end

@@ -1,3 +1,29 @@
 <p><%= @question.title %></p>
 <p><%= @args_a.text %></p>
+<% if @comments_a != nil %>
+  <ol>
+    <% @comments_a.each do |comment| %>
+      <li><%= comment.comment %></li>
+    <% end %>
+  </ol>
+<% end %>
+<%= form_for @comment do |f| %>
+  <%= f.hidden_field :args_id, :value => @args_a.id %>
+  <%= f.label :comment %>
+  <%= f.text_field :comment %>
+  <%= f.submit 'Submit' %>
+<% end %>
 <p><%= @args_b.text %></p>
+<% if @comments_b != nil %>
+  <ol>
+    <% @comments_b.each do |comment| %>
+      <li><%= comment.comment %></li>
+    <% end %>
+  </ol>
+<% end %>
+<%= form_for @comment do |f| %>
+  <%= f.hidden_field :args_id, :value => @args_b.id %>
+  <%= f.label :comment %>
+  <%= f.text_field :comment %>
+  <%= f.submit 'Submit' %>
+<% end %>
