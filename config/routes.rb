@@ -6,8 +6,12 @@
   resources :arguments
   resources :comments
 
-  namespace :api do
-    resources :questions, :defaults => { :format => "json" }
+  namespace :api, :defaults => { :format => "json" } do
+    resources :questions do
+      collection do
+        get 'random'
+      end
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

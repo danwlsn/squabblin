@@ -17,6 +17,12 @@ class Api::QuestionsController < ApplicationController
 	def update
 	end
 
+	def random
+		@questions = Question.find(1)
+		@args = @questions.arguments
+		respond_with :questions => @questions, :args => @args
+	end
+
 	def destroy
 	end
 end
