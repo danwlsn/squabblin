@@ -8,7 +8,6 @@ class CommentsController < ApplicationController
     end
     comment_text = params[:comment][:comment]
     Comment.create(:comment=>comment_text, :args_id=> Integer(arg_id))
-    redirect_to "/questions/#{slug}", :status => :moved_permanently
 	end
 
 	def destroy
