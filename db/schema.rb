@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140208135110) do
+ActiveRecord::Schema.define(version: 20140208135633) do
 
   create_table "arguments", force: true do |t|
     t.string   "slug"
@@ -25,6 +25,13 @@ ActiveRecord::Schema.define(version: 20140208135110) do
   create_table "argumnets", force: true do |t|
     t.integer  "args_id"
     t.string   "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "comments", force: true do |t|
+    t.integer  "args_id"
+    t.string   "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
