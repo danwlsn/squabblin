@@ -3,7 +3,7 @@ class QuestionsController < ApplicationController
     questions = Question.all
     @question = questions.sample
     @args_a = Argument.find(@question.args_a)
-    @args_b = Argument.find(@question.args_a)
+    @args_b = Argument.find(@question.args_b)
 	end
 
 	def create
