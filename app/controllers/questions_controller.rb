@@ -39,6 +39,12 @@ class QuestionsController < ApplicationController
     end
 	end
 
+  def update
+    argument = Argument.find_by(params[:id])
+    argument.votes += 1
+    argument.save
+  end
+
 	def destroy
 	end
 
