@@ -1,8 +1,14 @@
  ShinyHipster::Application.routes.draw do
 
-  root 'arguments#index'
+  root 'questions#index'
 
+  resources :questions
   resources :arguments
+  resources :comments
+
+  namespace :api do
+    resources :questions, :defaults => { :format => "json" }
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
