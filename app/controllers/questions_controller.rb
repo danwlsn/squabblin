@@ -2,6 +2,8 @@ class QuestionsController < ApplicationController
 	def index
     questions = Question.all
     @question = questions.sample
+    @args_a = Argument.find(@question.args_a)
+    @args_b = Argument.find(@question.args_a)
 	end
 
 	def create
