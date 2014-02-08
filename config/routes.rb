@@ -2,9 +2,9 @@
 
   root 'questions#index'
 
-  resources :questions, :only [:create, :destroy]
-  resources :arguments, :only [:create, :destroy]
-  resources :comments, :only [:create, :destroy]
+  resources :questions
+  resources :arguments
+  resources :comments
 
   namespace :api do
     resources :questions, :defaults => { :format => "json" }

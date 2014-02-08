@@ -1,10 +1,6 @@
 class QuestionsController < ApplicationController
 	def index
-		@test = "debug"
-		respond_to do |format|
-			format.html
-			format.json {render json: @test}
-		end
+		@questions = Question.all
 	end
 
 	def create
