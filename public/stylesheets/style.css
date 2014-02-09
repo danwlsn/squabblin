@@ -73,3 +73,27 @@
 #button-container button {
     margin-right: 10px;
 }
+
+@media all and (max-width: 699px) {
+    .navbar {
+        height:140px;
+    }
+    #logo-container {
+        position: relative;
+        left:0;
+        margin-left: 0;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    #button-container {
+        margin: 0;
+        position: relative;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    #main-container {
+        margin-top: 180px;
+    }
+}
