@@ -30,6 +30,11 @@ class Api::ArgumentsController < ApplicationController
 		argument = Argument.find_by id: params[:id]
     argument.votes += 1
     argument.save
-    respond_with :argument => argument
+    comments = Comment.where(args_id: argument.id).all
+
+    full_json = argument.as_json
+    full_json[:comments] = comments.count
+
+		respond_with :arguments => full_json
 	end
 end
