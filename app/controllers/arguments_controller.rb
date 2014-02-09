@@ -9,10 +9,10 @@ class ArgumentsController < ApplicationController
 	end
 
 	def upvote
-		@argument = Argument.find_by(params[:id])
-    if @argument.update_attributes(:votes => 99)
-	    redirect_to root_path
-	  end
+		argument = Argument.find_by id: params[:id]
+    argument.votes += 1
+    argument.save
+    redirect_to root_path
 	end
 
 	def destroy

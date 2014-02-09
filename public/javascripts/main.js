@@ -52,11 +52,6 @@ $( document ).ready(function() {
     $(this).css("opacity","0.7");
   });
 
-  $(".bg-primary").on("click", function(){
-    var id = $(this).data("args");
-    alert(id);
-  })
-
   //animationappear();
 });
 
