@@ -1,0 +1,22 @@
+#logo-container {
+    margin: 0 auto;
+    width: 230px;
+    font-family: lobster, cursive;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#logo-container a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.navbar {
+    background-color: #428BCA;
+    border-width: 0px;
+}
+
+#form-container {
+    margin-top: 120px;
+}
