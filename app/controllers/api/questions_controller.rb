@@ -17,10 +17,16 @@ class Api::QuestionsController < ApplicationController
 	end
 
 	def random
-		@questions = Question.all
-		@question = @questions.sample
-		# @args = @questions.arguments
-		respond_with :questions => @question.as_json(include: :arguments)
+		questions = Question.all
+		question = questions.sample
+    args_a = Argument.find_by question.args_a
+    args_b = Argument.find_by question.args_b
+
+    full_json = question.as_json
+    full_json[:args_a] = args_a.as_json
+    full_json[:args_b] = args_b.as_json
+
+		respond_with :questions => full_json
 	end
 
 end
