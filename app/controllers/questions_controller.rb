@@ -2,11 +2,7 @@ class QuestionsController < ApplicationController
 	def index
     questions = Question.all
     @question = questions.sample
-    @args_a = Argument.find(@question.args_a)
-    @args_b = Argument.find(@question.args_b)
-    @comments_a = Comment.where(args_id: @args_a.id).all
-    @comments_b = Comment.where(args_id: @args_b.id).all
-    @comment = Comment.new
+    redirect_to "/questions/#{@question.slug}", :status => :moved_permanently
 	end
 
 	def create
