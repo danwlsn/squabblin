@@ -13,7 +13,7 @@
 }
 
 .navbar {
-    background-color: #660099;
+    background-color: #428BCA;
     border-width: 0px;
 }
 
@@ -21,6 +21,32 @@
     margin-top: 120px;
 }
 
-.main-container {
+#main-container {
     margin-top: 120px;
+}
+
+#container {
+    text-align: center;
+}
+
+.panel {
+    width: 100%;
+}
+
+.bg-primary {
+    padding: 18px 0px 5px 15px;
+    opacity: 0.7;
+    font-size: 18px;
+}
+
+.list-group {
+    margin-top: 20px;
+}
+
+.argument {
+    display: none;
+}
+
+#comment_comment {
+    margin: 10px 0 10px 0;
 }

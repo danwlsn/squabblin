@@ -10,9 +10,10 @@ class QuestionsController < ApplicationController
 	end
 
 	def create
-    question = params[:question][:title]
-    args_a_text = params[:question][:args_a]
-    args_b_text = params[:question][:args_b]
+    puts params
+    question = params[:title]
+    args_a_text = params[:args_a]
+    args_b_text = params[:args_b]
     args_a = Argument.create(:text=>args_a_text)
     args_b = Argument.create(:text=>args_b_text)
     slug = to_slug(question)
