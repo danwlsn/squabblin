@@ -24,8 +24,13 @@ class QuestionsController < ApplicationController
         slug.concat(rand(10).to_s)
       end
     end
-    Question.create(:title=>question, :args_a=>args_a.id, :args_b=>args_b.id, :slug=>slug)
-    redirect_to "/questions/#{slug}", :status => :moved_permanently
+    question = Question.new(:title=>question, :args_a=>args_a.id, :args_b=>args_b.id, :slug=>slug)
+    if question.save
+      redirect_to "/questions/#{slug}", :status => :moved_permanently
+    else
+      redirect_to new_question_path
+      flash[:error] = "Something went wrong"
+    end
 	end
 
   def new
