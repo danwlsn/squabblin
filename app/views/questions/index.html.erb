@@ -40,6 +40,14 @@
                 <% end %>
               </ul>
               <% end %>
+              <%= form_for @comment do |f| %>
+                <div class="form-group">
+                <%= f.hidden_field :args_id, :value => @args_a.id, :class => "form-control" %>
+                <%= f.label :comment, :class => "form-control" %>
+                <%= f.text_area :comment, :class => "form-control" %>
+                <%= f.submit 'Submit', :class => "form-control" %>
+                </div>
+              <% end %>
             </div>
           </div>
         </div>
@@ -56,6 +64,14 @@
                     <li class="list-group-item"><%= comment.comment %></li>
                   <% end %>
                 </ul>
+              <% end %>
+              <%= form_for @comment do |f| %>
+                <div class="form-group">
+                <%= f.hidden_field :args_id, :value => @args_b.id, :class => "form-control" %>
+                <%= f.label :comment, :class => "form-control" %>
+                <%= f.text_area :comment, :class => "form-control" %>
+                <%= f.submit 'Submit', :class => "form-control" %>
+                </div>
               <% end %>
             </div>
           </div>

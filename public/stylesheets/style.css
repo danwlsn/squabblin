@@ -46,3 +46,7 @@
 .argument {
     display: none;
 }
+
+#comment_comment {
+    margin: 10px 0 10px 0;
+}
