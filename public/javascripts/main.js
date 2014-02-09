@@ -22,8 +22,10 @@ $( document ).ready(function() {
 
   $(".bg-primary").hover(function(){
     $(this).css("opacity","1")
+    $(this).find('.votes').slideToggle();
   }, function() {
     $(this).css("opacity","0.7");
+    $(this).find('.votes').slideToggle();
   });
 
   //animationappear();
