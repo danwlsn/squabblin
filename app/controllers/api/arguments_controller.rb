@@ -22,6 +22,6 @@ class Api::ArgumentsController < ApplicationController
 		argument = Argument.find_by id: params[:id]
     argument.votes += 1
     argument.save
-    respond_with :complete => "upvoted"
+    respond_with :argument => argument
 	end
 end
