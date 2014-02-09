@@ -9,8 +9,10 @@
 
 #logo-container a {
     color: #FFFFFF;
+    text-decoration: none;
 }
 
 .navbar {
     background-color: #428BCA;
+    border-width: 0px;
 }
