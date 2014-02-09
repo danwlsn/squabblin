@@ -1,4 +1,4 @@
- ShinyHipster::Application.routes.draw do
+ShinyHipster::Application.routes.draw do
 
 	root 'questions#index'
 
@@ -11,6 +11,8 @@
 			collection do
 				get 'random'
 			end
+		end
+		resources :arguments do
 		end
 	end
 

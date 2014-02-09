@@ -8,6 +8,7 @@ class Api::QuestionsController < ApplicationController
 	end
 
 	def create
+
 	end
 
 	def show
