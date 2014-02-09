@@ -35,7 +35,8 @@
         <div class="panel panel-default argument">
           <div class="panel-body">
             <div class="bg-primary" data-args="<%= @args_a.id %>">
-              <p><%= link_to @args_a.text, {:controller => "arguments", :action => "update", :id => @args_a.id} %></p>
+              <p><%= link_to @args_a.text, {:controller => "arguments", :action => "upvote", :id => @args_a.id} %></p>
+              <p>Votes : <%= @args_a_votes %></p>
             </div>
             <% if @comments_a != nil %>
               <ul class="list-group">
@@ -60,7 +61,8 @@
           <div class="panel panel-default argument">
             <div class="panel-body">
               <div class="bg-primary" data-args="<%= @args_b.id %>">
-                <p><%= link_to @args_b.text, {:controller => "arguments", :action => "update", :id => @args_b.id} %></p>
+                <p><%= link_to @args_b.text, {:controller => "arguments", :action => "upvote", :id => @args_b.id} %></p>
+                <p>Votes : <%= @args_b_votes %></p>
               </div>
               <% if @comments_b != nil %>
                 <ul class="list-group">

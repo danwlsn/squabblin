@@ -39,9 +39,12 @@ class QuestionsController < ApplicationController
     if @question != nil
       @args_a = Argument.find(@question.args_a)
       @args_b = Argument.find(@question.args_b)
+      @args_a_votes = @args_a.votes
+      @args_b_votes = @args_b.votes
       @comments_a = Comment.where(args_id: @args_a.id).all
       @comments_b = Comment.where(args_id: @args_b.id).all
       @comment = Comment.new
+
     else
       raise ActionController::RoutingError.new('Not Found')
     end

@@ -4,33 +4,6 @@
  var argumenttwo = function(two) {argumenttwo = two;}
  var argumentthee = function(three) {argumentthree = three;}
 
-    var argumentone = "Blah Blah Blah .....................................................";
-    var argumenttwo = "YES!";
-    var argumentthree = "NO!";
-var v = $('#firstblock');
-$('<span />').text(v.text()).appendTo($(v).empty()).fadeOut(2000).promise().done(function() {
-    $(this).text(argumentone).fadeIn(2000).promise().done(function() {
-    v.text($(this).text());
-        $(this).remove();
-  });
-  });
-
-
-  var p = $('#secondblock');
-$('<span />').text(p.text()).appendTo($(p).empty()).fadeOut(2000).promise().done(function() {
-    $(this).text(argumenttwo).fadeIn(2000).promise().done(function() {
-    p.text($(this).text());
-        $(this).remove();
-  });
-  });
-
-    var j = $('#thirdblock');
-$('<span />').text(j.text()).appendTo($(j).empty()).fadeOut(2000).promise().done(function() {
-    $(this).text(argumentthree).fadeIn(2000).promise().done(function() {
-    j.text($(this).text());
-        $(this).remove();
-  });
-  });
 
 // Using multiple unit types within one animation.
  <!-- click funtion <button id="go">&raquo; Run</button> $( "#go" ).click(function() {} -->
