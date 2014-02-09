@@ -54,6 +54,10 @@ $(document).ready(function(){
 	
 	
   }  
+  #row{
+  
+  width: "70%";
+  }
      #firstblock{
 	display: inline-block;
 	text-align: center;
@@ -66,7 +70,7 @@ $(document).ready(function(){
   #secondblock{
   color: White;
   width:1%;
-  background-color: red;
+  background-color: #ff3333;
   
    
   
@@ -75,7 +79,7 @@ $(document).ready(function(){
     #thirdblock{
   color: White;
   width:1%;
-  background-color: lightgreen;
+  background-color: #33ff33;
    
   
   }
@@ -97,15 +101,15 @@ $(document).ready(function(){
 
   
 
-  Rate My Debate!!
+ .................
+ ................................................                            
 
 </div>
 </div>
 </div>
 
 
-<br>
-<br>
+
 
 <div class="row">
  <div class="col-md-6">
@@ -143,13 +147,16 @@ $(document).ready(function(){
   </div>
  </div>
 
+ 
+ 
+
 <script>
 
-
+	
 
 var v = $('#firstblock');
 $('<span />').text(v.text()).appendTo($(v).empty()).fadeOut(2000).promise().done(function() {
-    $(this).text('Do you think it\'s a good idea to jump out of a plane?').fadeIn().promise().done(function() {
+    $(this).text('Do you think it\'s a good idea to jump out of a plane?').fadeIn(2000).promise().done(function() {
     v.text($(this).text());
         $(this).remove();
   });
@@ -158,7 +165,7 @@ $('<span />').text(v.text()).appendTo($(v).empty()).fadeOut(2000).promise().done
   
   var p = $('#secondblock');
 $('<span />').text(p.text()).appendTo($(p).empty()).fadeOut(2000).promise().done(function() {
-    $(this).text('NO!').fadeIn().promise().done(function() {
+    $(this).text('NO!').fadeIn(2000).promise().done(function() {
     p.text($(this).text());
         $(this).remove();
   });
@@ -166,7 +173,7 @@ $('<span />').text(p.text()).appendTo($(p).empty()).fadeOut(2000).promise().done
   
     var j = $('#thirdblock');
 $('<span />').text(j.text()).appendTo($(j).empty()).fadeOut(2000).promise().done(function() {
-    $(this).text('YES!').fadeIn().promise().done(function() {
+    $(this).text('YES!').fadeIn(2000).promise().done(function() {
     j.text($(this).text());
         $(this).remove();
   });
@@ -176,7 +183,12 @@ $('<span />').text(j.text()).appendTo($(j).empty()).fadeOut(2000).promise().done
 // Using multiple unit types within one animation.
  <!-- click funtion <button id="go">&raquo; Run</button> $( "#go" ).click(function() {} -->
  
+  
+ 
 </script>
+
+
+
 <div id="container">
  <script>
  
@@ -243,6 +255,11 @@ var animationReverse = function() {
 	
     borderWidth: "0px"
   }, 2500 );
+  
+  
+  
+  
+  
 
 
 };
@@ -264,7 +281,8 @@ var animationappear = function() {
     fontSize: "3em",
     borderWidth: "1px"
 	
-  }, 2500 );
+	
+  }, 1000 );
 
 
 
@@ -278,7 +296,7 @@ var animationappear = function() {
     fontSize: "2em",
 	
     borderWidth: "0px"
-  }, 2500 );
+  }, 400 );
 
 
 
@@ -292,8 +310,13 @@ var animationappear = function() {
     fontSize: "2em",
 	
     borderWidth: "0px"
-  }, 2500 );
+  }, 400 );
 
+  
+  	
+  
+  
+  
 
 };
 
@@ -301,21 +324,23 @@ var animationappear = function() {
 </div>
 
 
+<div class="row">
+<div class="col-xs-6 .col-md-4">
+
+<!-- Begin Comments JavaScript Code --><script type="text/javascript" async>if(window.location.href.indexOf('&routeignore=1') == -1)
+{(function(){document.write('<div id="fcs_div"><a title="free comment script" href="http://www.freecommentscript.com">&nbsp;&nbsp;<b>Free HTML User Comments</b></a></div>')
+;fcsfcs=document.createElement('script');fcsfcs.type="text/javascript";fcsfcs.src="http://www.freecommentscript.com/GetComments.php?p=52f7125976a3f&s=" + 
+escape(window.location) + "&Width=380&FontColor=111111&BackgroundColor=FF3E30&FontSize=11&Size=10";setTimeout
+("document.getElementById('fcs_div').appendChild(fcsfcs)",1);})();}</script><noscript><div>
+<a href="http://www.freecommentscript.com" title="free html user comment box">Free Comment Script</a></div></noscript>
+<!-- End Comments JavaScript Code -->
 
 
+</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
+<div class="col-xs-6 .col-md-4"></div>
+<div class="col-xs-6 .col-md-4"></div>
+</div>
 
 
 </body>
