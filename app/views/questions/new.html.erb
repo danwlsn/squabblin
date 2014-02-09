@@ -3,10 +3,29 @@
 <% end %>
 <%= form_for @question do |f| %>
   <%= f.label :title %>
-  <%= f.text_field :title %>
+  <%= f.text_field :title %><br>
   <%= f.label :args_a %>
-  <%= f.text_field :args_a %>
+  <%= f.text_field :args_a, class: "a-input" %>
+  <p id="counterA"></p>
   <%= f.label :args_b %>
-  <%= f.text_field :args_b %>
+  <%= f.text_field :args_b, class: "b-input" %>
+  <p id="counterB"></p>
   <%= f.submit 'Submit' %>
 <% end %>
+
+<script type="text/javascript">
+$('.a-input').keyup(function () {
+    var left = 300 - $(this).val().length;
+    if (left < 0) {
+        left = 0;
+    }
+    $('#counterA').text('Characters left: ' + left);
+});
+$('.b-input').keyup(function () {
+    var left = 300 - $(this).val().length;
+    if (left < 0) {
+        left = 0;
+    }
+    $('#counterB').text('Characters left: ' + left);
+});
+</script>
