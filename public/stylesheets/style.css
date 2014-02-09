@@ -1,10 +1,13 @@
 #logo-container {
-    margin: 0 auto;
     width: 230px;
+    position: absolute;
+    left: 50%;
+    margin-left: -115px;
     font-family: lobster, cursive;
     font-weight: normal;
     text-align: center;
     margin-bottom: 20px;
+    display: inline-block;
 }
 
 #logo-container a {
@@ -15,6 +18,8 @@
 .navbar {
     background-color: #428BCA;
     border-width: 0px;
+    text-align: center;
+    height: 80px;
 }
 
 #form-container {
@@ -49,4 +54,14 @@
 
 #comment_comment {
     margin: 10px 0 10px 0;
+}
+
+#button-container {
+    display: inline-block;
+    float: right;
+    margin: 20px 20px 0 0;
+}
+
+#button-container button {
+    margin-right: 10px;
 }
