@@ -8,7 +8,11 @@ class ArgumentsController < ApplicationController
 	def show
 	end
 
-	def update
+	def upvote
+		argument = Argument.find_by id: params[:id]
+    argument.votes += 1
+    argument.save
+    redirect_to root_path
 	end
 
 	def destroy

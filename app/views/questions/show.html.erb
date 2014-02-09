@@ -34,8 +34,8 @@
       <div class="col-md-6">
         <div class="panel panel-default argument">
           <div class="panel-body">
-            <div class="bg-primary">
-              <p><%= @args_a.text %></p>
+            <div class="bg-primary" data-args="<%= @args_a.id %>">
+              <p><%= link_to @args_a.text, {:controller => "arguments", :action => "update", :id => @args_a.id} %></p>
             </div>
             <% if @comments_a != nil %>
               <ul class="list-group">
@@ -59,8 +59,8 @@
         <div class="col-md-6">
           <div class="panel panel-default argument">
             <div class="panel-body">
-              <div class="bg-primary">
-                <p><%= @args_b.text %></p>
+              <div class="bg-primary" data-args="<%= @args_b.id %>">
+                <p><%= link_to @args_b.text, {:controller => "arguments", :action => "update", :id => @args_b.id} %></p>
               </div>
               <% if @comments_b != nil %>
                 <ul class="list-group">
