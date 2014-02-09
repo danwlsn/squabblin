@@ -1,0 +1,33 @@
+#container{
+  display: inline-block;
+  text-align: center;
+  border-width: 1px;
+}  
+
+#block {
+  display: inline-block;
+  text-align: center;
+  border-width: 1px;
+  border-width: 1px;
+} 
+
+#row {
+  margin-right: -100px;
+}
+
+#firstblock {
+  display: inline-block;
+  text-align: center;
+}  
+
+#secondblock {
+  color: White;
+  width:1%;
+  background-color: #33ff33;
+}
+
+#thirdblock {
+  color: White;
+  width:1%;
+  background-color: #ff3333;
+}

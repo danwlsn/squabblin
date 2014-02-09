@@ -1,29 +1,70 @@
-<p><%= @question.title %></p>
-<p><%= @args_a.text %></p>
-<% if @comments_a != nil %>
-  <ol>
-    <% @comments_a.each do |comment| %>
-      <li><%= comment.comment %></li>
-    <% end %>
-  </ol>
-<% end %>
-<%= form_for @comment do |f| %>
-  <%= f.hidden_field :args_id, :value => @args_a.id %>
-  <%= f.label :comment %>
-  <%= f.text_field :comment %>
-  <%= f.submit 'Submit' %>
-<% end %>
-<p><%= @args_b.text %></p>
-<% if @comments_b != nil %>
-  <ol>
-    <% @comments_b.each do |comment| %>
-      <li><%= comment.comment %></li>
-    <% end %>
-  </ol>
-<% end %>
-<%= form_for @comment do |f| %>
-  <%= f.hidden_field :args_id, :value => @args_b.id %>
-  <%= f.label :comment %>
-  <%= f.text_field :comment %>
-  <%= f.submit 'Submit' %>
-<% end %>
+<%= stylesheet_link_tag 'bootstrap.css' %>
+<%= stylesheet_link_tag 'style.css' %>
+<%= stylesheet_link_tag 'main.css' %>
+<%= javascript_include_tag 'main.js' %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RateMyDebate</title>
+  <link rel="shortcut icon" href="img\favicon.gif">
+  <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div id='logo-container'>
+      <a href='index.html'><h1 id="logo">MasterDebater</h1></a>
+    </div>
+  </div>
+  <div class="container" id="main-container">
+    <div class="row">
+      <div id="firstblock" class="panel panel-default">
+        <div id="block" class="panel-body">
+        <h1><%= @question.title %></h1>                      
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="panel panel-default argument">
+          <div class="panel-body">
+            <div class="bg-primary">
+              <p><%= @args_a.text %></p>
+            </div>
+            <% if @comments_a != nil %>
+              <ul class="list-group">
+                <% @comments_a.each do |comment| %>
+                  <li class="list-group-item"><%= comment.comment %></li>
+                <% end %>
+              </ul>
+              <% end %>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="panel panel-default argument">
+            <div class="panel-body">
+              <div class="bg-primary">
+                <p><%= @args_b.text %></p>
+              </div>
+              <% if @comments_b != nil %>
+                <ul class="list-group">
+                  <% @comments_b.each do |comment| %>
+                    <li class="list-group-item"><%= comment.comment %></li>
+                  <% end %>
+                </ul>
+              <% end %>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <p>&copy; 2 - 1 | Shiny-Hipster 2014</p>
+  </div>    
+    </div> <!-- /container -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  </body>
+</html>
