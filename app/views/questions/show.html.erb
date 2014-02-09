@@ -30,7 +30,7 @@
       <div class="col-md-6">
         <div class="panel panel-default argument">
           <div class="panel-body">
-            <div class="bg-primary">
+            <div class="bg-primary" data-args="<%= @args_a.id %>">
               <p><%= @args_a.text %></p>
             </div>
             <% if @comments_a != nil %>
@@ -55,7 +55,7 @@
         <div class="col-md-6">
           <div class="panel panel-default argument">
             <div class="panel-body">
-              <div class="bg-primary">
+              <div class="bg-primary" data-args="<%= @args_b.id %>">
                 <p><%= @args_b.text %></p>
               </div>
               <% if @comments_b != nil %>

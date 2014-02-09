@@ -3,8 +3,21 @@ class Api::QuestionsController < ApplicationController
 	respond_to :json
 
 	def index
-		@questions = Question.all
-		respond_with :questions => @questions
+		question = Question.find(params[:id])
+    args_a = Argument.find_by id: question.args_a
+    args_b = Argument.find_by id: question.args_b
+    comments_a = Comment.where(args_id: args_a.id).all
+    comments_b = Comment.where(args_id: args_b.id).all
+
+    args_a = args_a.as_json
+    args_b = args_b.as_json
+    args_a[:comments] = comments_a.count
+    args_b[:comments] = comments_b.count
+
+    full_json = question.as_json
+    full_json[:arguments] = args_a, args_b
+
+    respond_with :questions => full_json
 	end
 
 	def create

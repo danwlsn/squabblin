@@ -30,9 +30,10 @@
       <div class="col-md-6">
         <div class="panel panel-default argument">
           <div class="panel-body">
-            <div class="bg-primary">
+            <div class="bg-primary" data-args="<%= @args_a.id %>">
               <p><%= @args_a.text %></p>
             </div>
+            <p><%= link_to "Upvote", {:controller => "arguments", :action => "upvote", :id => @args_a.id} %></p>
             <% if @comments_a != nil %>
               <ul class="list-group">
                 <% @comments_a.each do |comment| %>
@@ -55,7 +56,7 @@
         <div class="col-md-6">
           <div class="panel panel-default argument">
             <div class="panel-body">
-              <div class="bg-primary">
+              <div class="bg-primary" data-args="<%= @args_b.id %>">
                 <p><%= @args_b.text %></p>
               </div>
               <% if @comments_b != nil %>
