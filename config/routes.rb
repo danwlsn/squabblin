@@ -18,7 +18,7 @@ ShinyHipster::Application.routes.draw do
 				get 'comments'
 			end
 		end
-		resources :comments
+		resources :comments do
 		end
 	end
 
