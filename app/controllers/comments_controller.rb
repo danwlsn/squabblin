@@ -9,7 +9,6 @@ class CommentsController < ApplicationController
     slug = question.slug
     comment_text = params[:comment][:comment]
     Comment.create(:comment=>comment_text, :args_id=> Integer(arg_id))
-    # redirect_to "/questions/#{slug}", :status => :moved_permanently
     redirect_to question_path(slug)
 	end
 
