@@ -1,0 +1,16 @@
+#logo-container {
+    margin: 0 auto;
+    width: 230px;
+    font-family: lobster, cursive;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#logo-container a {
+    color: #FFFFFF;
+}
+
+.navbar {
+    background-color: #428BCA;
+}
