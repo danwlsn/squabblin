@@ -13,6 +13,10 @@ ShinyHipster::Application.routes.draw do
 			end
 		end
 		resources :arguments do
+			member do
+				get 'comments'
+				post 'vote'
+			end
 		end
 	end
 

@@ -24,10 +24,11 @@ class Api::QuestionsController < ApplicationController
     args_b = Argument.find_by id: question.args_b
     comments_a = Comment.where(args_id: args_a.id).all
     comments_b = Comment.where(args_id: args_b.id).all
+
     args_a = args_a.as_json
     args_b = args_b.as_json
-    args_a[:comments] = comments_a.as_json
-    args_b[:comments] = comments_b.as_json
+    args_a[:comments] = comments_a.count
+    args_b[:comments] = comments_b.count
 
     full_json = question.as_json
     full_json[:arguments] = args_a, args_b
