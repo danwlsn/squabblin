@@ -36,11 +36,19 @@
       <div class="col-md-6">
         <div class="panel panel-default argument">
           <div class="panel-body">
-            <%= link_to({:controller => "arguments", :action => "upvote", :id => @args_a.id}) do %>
+            <% if cookies.signed[:voted] != @args_a.id %>
+              <%= link_to({:controller => "arguments", :action => "upvote", :id => @args_a.id}) do %>
+                <div class="bg-primary" data-args="<%= @args_a.id %>">
+                <p><%=  @args_a.text %></p>
+                <p class="votes">Votes : <%= @args_a_votes %></p>
+                </div>
+              <% end %>
+            <% else %>
               <div class="bg-primary" data-args="<%= @args_a.id %>">
-              <p><%=  @args_a.text %></p>
-              <p class="votes">Votes : <%= @args_a_votes %></p>
+                <p><%=  @args_a.text %></p>
+                <p class="votes">Votes : <%= @args_a_votes %></p>
               </div>
+            </div>
             <% end %>
             <% if @comments_a != nil %>
               <ul class="list-group">
@@ -64,11 +72,19 @@
         <div class="col-md-6">
           <div class="panel panel-default argument">
             <div class="panel-body">
+            <% if cookies.signed[:voted] != @args_b.id %>
               <%= link_to({:controller => "arguments", :action => "upvote", :id => @args_b.id}) do %>
+                <div class="bg-primary" data-args="<%= @args_b.id %>">
+                  <p><%=  @args_b.text %></p>
+                  <p class="votes">Votes : <%= @args_b_votes %></p>
+                </div>
+              <% end %>
+            <% else %>
               <div class="bg-primary" data-args="<%= @args_b.id %>">
-              <p><%=  @args_b.text %></p>
-              <p class="votes">Votes : <%= @args_b_votes %></p>
+                <p><%=  @args_b.text %></p>
+                <p class="votes">Votes : <%= @args_b_votes %></p>
               </div>
+            </div>
             <% end %>
               <% if @comments_b != nil %>
                 <ul class="list-group">
