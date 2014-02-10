@@ -1,8 +1,12 @@
 class QuestionsController < ApplicationController
 	def index
     questions = Question.all
-    @question = questions.sample
-    redirect_to "/questions/#{@question.slug}", :status => :moved_permanently
+    if questions.blank?
+      redirect_to new_question_path
+    else
+      @question = questions.sample
+      redirect_to "/questions/#{@question.slug}", :status => :moved_permanently
+    end
 	end
 
 	def create
