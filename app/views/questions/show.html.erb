@@ -22,8 +22,8 @@
   </div>
   <div class="container" id="main-container">
     <div class="row">
-      <div id="firstblock" class="panel panel-default">
-        <div id="block" class="panel-body">
+      <div id="firstblock" class="col-md-12">
+        <div id="block" class="panel panel-default panel-body">
         <h1><%= @question.title %></h1>
         <a href="https://twitter.com/intent/tweet?button_hashtag=MasterDebater&text=<%=@question.title%>%20What%20do%20you%20think%3F%20http://masterdebater.herokuapp.com/questions/<%=@question.slug%>" class="twitter-hashtag-button">Tweet #MasterDebater</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
