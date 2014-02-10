@@ -7,10 +7,10 @@ $( document ).ready(function() {
 
   $(".bg-primary").hover(function(){
     $(this).css("opacity","1")
-    $(this).find('.votes').slideToggle();
+    $(this).find('.votes').stop().slideToggle();
   }, function() {
     $(this).css("opacity","0.7");
-    $(this).find('.votes').slideToggle();
+    $(this).find('.votes').stop().slideToggle();
   });
 
 });
